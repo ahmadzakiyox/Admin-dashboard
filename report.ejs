@@ -1,0 +1,42 @@
+<!-- views/report.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report</title>
+  <link rel="stylesheet" href="/path/to/your/css/style.css"> <!-- Adjust path -->
+</head>
+<body>
+  <div class="card">
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Laporan Pembelian</h6>
+    </div>
+    <div class="table-responsive">
+      <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Item (Produk yang Dibeli)</th>
+            <th>Harga</th>
+            <th>Jumlah Barang</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% purchases.forEach(purchase => { %>
+            <tr>
+              <td><%= purchase.username %></td>
+              <td><%= purchase.email %></td>
+              <td><%= purchase.item %></td>
+              <td>Rp <%= purchase.price.toLocaleString() %></td>
+              <td><%= purchase.quantity %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer"></div>
+  </div>
+</body>
+</html>

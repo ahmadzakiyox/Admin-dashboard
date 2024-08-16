@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Add Stock</title>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        #addStockFormContainer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body id="page-top" class="dark-mode">
+    <div id="wrapper">
+          <!-- Sidebar -->
+          <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <i class="fa fa-store fa-2x"></i>
+                <div class="sidebar-brand-text mx-3">E-Commerce Admin</div>
+            </a>
+            <hr class="sidebar-divider my-0">
+
+            <!-- Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <!-- Blocks -->
+            <div class="sidebar-heading">Blocks</div>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-cube"></i>
+                    <span>Blocks</span>
+                </a>
+            </li>
+
+          
+
+            <!-- Products -->
+            <li class="nav-item">
+                <a class="nav-link" href="produk.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Add Products</span>
+                </a>
+            </li>
+
+            <!-- List Products -->
+            <li class="nav-item">
+                <a class="nav-link" href="stok.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Add Stok</span>
+                </a>
+            </li>
+
+              <!-- Add stockall -->
+              <li class="nav-item">
+                <a class="nav-link" href="stockall.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Add Stokall</span>
+                </a>
+            </li>
+
+            <!-- Stok -->
+            <li class="nav-item">
+                <a class="nav-link" href="listproduk.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>List Product</span>
+                </a>
+            </li>
+
+            <!-- Deposits -->
+            <li class="nav-item">
+                <a class="nav-link" href="deposit.html">
+                    <i class="fas fa-fw fa-dollar-sign"></i>
+                    <span>Deposits</span>
+                </a>
+            </li>
+
+            <!-- Transactions -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-exchange-alt"></i>
+                    <span>Transactions</span>
+                </a>
+            </li>
+
+            <!-- Sales -->
+            <li class="nav-item">
+                <a class="nav-link" href="report.html">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Sales</span>
+                </a>
+            </li>
+
+            <!-- Revenue -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-money-bill-wave"></i>
+                    <span>Revenue</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">Contact</div>
+            <li class="nav-item">
+                <a class="nav-link" href="https://t.me/ahmadzakiyo">
+                    <i class="fab fa-fw fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
+        </ul>
+        <!-- Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <!-- TopBar -->
+                <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+                    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle fa-2x"></i>
+                                <span class="ml-2 d-none d-lg-inline small font-weight-bold">Admin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Topbar -->
+
+                <!-- Container Fluid-->
+                <div class="container-fluid" id="container-wrapper">
+                    <!-- Add Stock Form -->
+                    <div id="addStockFormContainer">
+                        <h2>Add Stock</h2>
+                        <form id="addStockForm">
+                            <div class="form-group">
+                                <label for="kodeProduk">Product Code:</label>
+                                <input type="text" class="form-control" id="kodeProduk" name="kodeProduk" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="submitBtn">Add Stock</button>
+                            <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                        </form>
+                        <div id="message" class="mt-3"></div>
+                    </div>
+                    <!-- Add Stock Form -->
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                Made with <i class="fa fa-heart"></i> by
+                                <a href="https://https://t.me/ahmadzakiyo" target="_blank" style="color: #fff;">Ahmadzaki❤️</a>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- Footer -->
+                </div>
+                <!-- Container Fluid -->
+            </div>
+            <!-- Content Wrapper -->
+        </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/ruang-admin.min.js"></script>
+
+    <script>
+        document.getElementById('addStockForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value; });
+
+            fetch('/api/stocks/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').innerText = data.message;
+                if (data.message === 'Stock added successfully') {
+                    this.reset();
+                }
+            })
+            .catch(error => {
+                document.getElementById('message').innerText = 'Error adding stock!';
+            });
+        });
+
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            document.getElementById('addStockForm').reset();
+        });
+    </script>
+</body>
+
+</html>

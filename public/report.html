@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sales Report</title>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Custom styles for dark theme */
+        body {
+            background-color: #343a40; /* Dark background color */
+            color: #f8f9fa; /* Light text color */
+        }
+
+        .card {
+            background-color: #495057; /* Dark card background */
+            color: #f8f9fa; /* Light card text color */
+        }
+
+        .table {
+            color: #f8f9fa; /* Light text color in table */
+        }
+
+        .table thead th {
+            background-color: #6c757d; /* Darker header background */
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #6c757d; /* Darker background for even rows */
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #495057; /* Slightly lighter background for odd rows */
+        }
+
+        .table tbody tr:hover {
+            background-color: #565656; /* Hover effect color */
+        }
+
+        .card-footer {
+            background-color: #495057; /* Dark footer background */
+        }
+
+        .btn {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body id="page-top" class="dark-mode">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+               <!-- Sidebar -->
+        <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <i class="fa fa-store fa-2x"></i>
+                <div class="sidebar-brand-text mx-3">E-Commerce Admin</div>
+            </a>
+            <hr class="sidebar-divider my-0">
+
+            <!-- Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <!-- Blocks -->
+            <div class="sidebar-heading">Blocks</div>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-cube"></i>
+                    <span>Blocks</span>
+                </a>
+            </li>
+
+          
+
+            <!-- Products -->
+            <li class="nav-item">
+                <a class="nav-link" href="produk.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Add Products</span>
+                </a>
+            </li>
+
+            <!-- List Products -->
+            <li class="nav-item">
+                <a class="nav-link" href="stok.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Add Stok</span>
+                </a>
+            </li>
+
+              <!-- Add stockall -->
+              <li class="nav-item">
+                <a class="nav-link" href="stockall.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Add Stokall</span>
+                </a>
+            </li>
+
+            <!-- Stok -->
+            <li class="nav-item">
+                <a class="nav-link" href="listproduk.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>List Product</span>
+                </a>
+            </li>
+
+            <!-- Deposits -->
+            <li class="nav-item">
+                <a class="nav-link" href="deposit.html">
+                    <i class="fas fa-fw fa-dollar-sign"></i>
+                    <span>Deposits</span>
+                </a>
+            </li>
+
+            <!-- Transactions -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-exchange-alt"></i>
+                    <span>Transactions</span>
+                </a>
+            </li>
+
+            <!-- Sales -->
+            <li class="nav-item">
+                <a class="nav-link" href="report.html">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Sales</span>
+                </a>
+            </li>
+
+            <!-- Revenue -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-money-bill-wave"></i>
+                    <span>Revenue</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">Contact</div>
+            <li class="nav-item">
+                <a class="nav-link" href="https://t.me/ahmadzakiyo">
+                    <i class="fab fa-fw fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
+        </ul>
+        <!-- Sidebar -->
+        </ul>
+        <!-- Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <!-- TopBar -->
+                <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+                    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle fa-2x"></i>
+                                <span class="ml-2 d-none d-lg-inline small font-weight-bold">Admin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Topbar -->
+
+                <!-- Container Fluid-->
+                <div class="container-fluid" id="container-wrapper">
+                    <!-- Sales Report -->
+                    <div class="card">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Sales Report</h6>
+                            <div>
+                                <button id="downloadCSV" class="btn btn-success">Download CSV</button>
+                                <button id="downloadXLSX" class="btn btn-success">Download XLSX</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="salesTable" class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>User ID</th>
+                                        <th>Email</th>
+                                        <th>Product Code</th>
+                                        <th>Product Name</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data penjualan akan dimasukkan di sini -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer"></div>
+                    </div>
+                    <!-- Sales Report -->
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                Made with <i class="fa fa-heart"></i> by
+                                <a href="https://https://t.me/ahmadzakiyo" target="_blank" style="color: #fff;">Ahmadzaki❤️</a>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- Footer -->
+                </div>
+                <!-- Container Fluid -->
+            </div>
+            <!-- Content Wrapper -->
+        </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/ruang-admin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script>
+        function formatCurrency(amount) {
+            return '' + amount.toLocaleString('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+              // Ambil data penjualan dari API
+        fetch('/api/sales')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // Cek data yang diterima
+                const tableBody = document.getElementById('salesTableBody');
+                tableBody.innerHTML = ''; // Kosongkan tabel sebelum mengisi data
+
+                data.forEach(sale => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${sale.userId}</td>
+                        <td>${sale.productCode}</td>
+                        <td>${sale.productName}</td>
+                        <td>Rp ${sale.price.toLocaleString()}</td>
+                        <td>${sale.quantity}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching sales data:', error);
+                // Tampilkan pesan kesalahan di UI
+                const tableBody = document.getElementById('salesTableBody');
+                tableBody.innerHTML = '<tr><td colspan="5">Error fetching sales data</td></tr>';
+            });
+
+            // Download CSV
+            document.getElementById('downloadCSV').addEventListener('click', function() {
+                const ws = XLSX.utils.table_to_sheet(document.getElementById('salesTable'));
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, 'Sales Report');
+                XLSX.writeFile(wb, 'Sales_Report.csv');
+            });
+
+            // Download XLSX
+            document.getElementById('downloadXLSX').addEventListener('click', function() {
+                const ws = XLSX.utils.table_to_sheet(document.getElementById('salesTable'));
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, 'Sales Report');
+                XLSX.writeFile(wb, 'Sales_Report.xlsx');
+            });
+        });
+    </script>
+</body>
+
+</html>

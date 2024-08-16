@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Admin Dashboard</title>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        #productFormContainer {
+            display: none; /* Hidden by default */
+        }
+        .card h4 {
+            margin: 0;
+        }
+        .card .card-icon {
+            font-size: 2rem;
+            color: #4e73df; /* Match the theme color */
+        }
+        .card-body {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card .icon-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+        }
+        .card .icon-container i {
+            font-size: 2rem;
+            color: #4e73df; /* Match the theme color */
+        }
+        
+    </style>
+    
+</head>
+
+<body id="page-top" class="dark-mode">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <i class="fa fa-store fa-2x"></i>
+                <div class="sidebar-brand-text mx-3">E-Commerce Admin</div>
+            </a>
+            <hr class="sidebar-divider my-0">
+
+            <!-- Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <!-- Blocks -->
+            <div class="sidebar-heading">Blocks</div>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-cube"></i>
+                    <span>Blocks</span>
+                </a>
+            </li>
+
+          
+
+            <!-- Products -->
+            <li class="nav-item">
+                <a class="nav-link" href="produk.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Add Products</span>
+                </a>
+            </li>
+
+            <!-- List Products -->
+            <li class="nav-item">
+                <a class="nav-link" href="stok.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Add Stok</span>
+                </a>
+            </li>
+
+              <!-- Add stockall -->
+              <li class="nav-item">
+                <a class="nav-link" href="stockall.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Add Stokall</span>
+                </a>
+            </li>
+
+            <!-- Stok -->
+            <li class="nav-item">
+                <a class="nav-link" href="listproduk.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>List Product</span>
+                </a>
+            </li>
+
+            <!-- Deposits -->
+            <li class="nav-item">
+                <a class="nav-link" href="deposit.html">
+                    <i class="fas fa-fw fa-dollar-sign"></i>
+                    <span>Deposits</span>
+                </a>
+            </li>
+
+            <!-- Transactions -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-exchange-alt"></i>
+                    <span>Transactions</span>
+                </a>
+            </li>
+
+            <!-- Sales -->
+            <li class="nav-item">
+                <a class="nav-link" href="report.html">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Sales</span>
+                </a>
+            </li>
+
+            <!-- Revenue -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-money-bill-wave"></i>
+                    <span>Revenue</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">Contact</div>
+            <li class="nav-item">
+                <a class="nav-link" href="https://t.me/ahmadzakiyo">
+                    <i class="fab fa-fw fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
+        </ul>
+        <!-- Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <!-- TopBar -->
+                <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+                    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle fa-2x"></i>
+                                <span class="ml-2 d-none d-lg-inline small font-weight-bold">Admin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Topbar -->
+
+                <!-- Container Fluid-->
+                <div class="container-fluid" id="container-wrapper">
+                    <!-- Example Cards -->
+                    <div class="row mb-3">
+                        <!-- User Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">JUMLAH USER</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="userCount">Loading...</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-user card-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Products Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">JUMLAH PRODUCT</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="productCount">Loading...</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-box card-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sales Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">TOTAL PENJUALAN</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="totalSales">Loading...</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-money-bill-wave card-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Revenue Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">TOTAL TERJUAL</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="totalRevenue">$0.00</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-shopping-cart card-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- IP Address Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">IP Address</div>
+                                            <div class="h5 mb-0 font-weight-bold" id="ip">Loading...</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-network-wired card-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Clock Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Clock</div>
+                                            <h4 class="mb-0" id="Clock">Waiting...</h4>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clock card-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Example Cards -->
+                    <!-- Report Cards -->
+                    <div class="card">
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Daftar Produk</h6>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="productTable" class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Kode</th>
+                                        <th>Nama</th>
+                                        <th>Harga</th>
+                                        <th>Stock</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Data produk akan dimasukkan di sini -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer"></div>
+                    </div>                    
+        <!-- Report Cards -->
+                    <!-- Footer -->
+                    <footer class="sticky-footer">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                Made with <i class="fa fa-heart"></i> by
+                                <a href="https://https://t.me/ahmadzakiyo" target="_blank" style="color: #fff;">Ahmadzaki❤️</a>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- Footer -->
+                </div>
+                <!-- Container Fluid -->
+            </div>
+            <!-- Content Wrapper -->
+        </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/ruang-admin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Fungsi untuk memformat angka menjadi format Rupiah
+        function formatRupiah(amount) {
+            return '' + amount.toLocaleString('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fetch jumlah user
+            fetch('/api/users/count')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('userCount').innerText = data.count;
+                })
+                .catch(error => {
+                    console.error('Error fetching user count:', error);
+                    document.getElementById('userCount').innerText = 'Error fetching data';
+                });
+
+            // Fetch jumlah produk
+            fetch('/api/products/count')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('productCount').innerText = data.count;
+                })
+                .catch(error => {
+                    console.error('Error fetching product count:', error);
+                    document.getElementById('productCount').innerText = 'Error fetching data';
+                });
+
+            // Fetch total sales
+            fetch('/api/sales/total')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('totalSales').innerText = formatRupiah(data.total);
+                })
+                .catch(error => {
+                    console.error('Error fetching total sales:', error);
+                    document.getElementById('totalSales').innerText = 'Error fetching data';
+                });
+
+        // Fetch total products sold (revised to show sold products)
+        fetch('/api/products/sold')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('totalRevenue').innerText = (data.sold);
+            })
+            .catch(error => {
+                console.error('Error fetching total products sold:', error);
+                document.getElementById('totalRevenue').innerText = 'Error fetching data';
+            });
+    });
+    </script>
+    <script>
+        // Menggunakan API ipify untuk mendapatkan IP address
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip').innerText = data.ip;
+                // Kirim IP address ke server jika diperlukan
+                fetch('/api/ip-address', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ ip: data.ip })
+                });
+            })
+            .catch(error => console.error('Error fetching IP address:', error));
+    </script>
+    <script>
+     // Function to update the clock
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('Clock').innerText = `${hours}:${minutes}:${seconds}`;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+updateClock(); // Initial call to set the clock immediately
+
+    </script>
+    <!-- Include Chart.js if not already included -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create and configure the area chart
+    const ctx = document.getElementById('myAreaChart').getContext('2d');
+    const myAreaChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [{
+                label: 'Monthly Revenue',
+                data: [120000, 150000, 180000, 200000, 170000, 160000, 180000, 210000, 220000, 230000, 240000, 250000], // Replace with actual revenue data
+                backgroundColor: 'rgba(78, 115, 223, 0.2)',
+                borderColor: 'rgba(78, 115, 223, 1)',
+                borderWidth: 2,
+                fill: true
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 25,
+                    top: 10,
+                    bottom: 0
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    grid: {
+                        drawBorder: false
+                    },
+                    ticks: {
+                        maxTicksLimit: 12
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        drawBorder: false,
+                        color: 'rgba(234, 236, 244, 1)',
+                        zeroLineColor: 'rgba(234, 236, 244, 1)',
+                        zeroLineWidth: 1
+                    },
+                    ticks: {
+                        maxTicksLimit: 5,
+                        padding: 10,
+                        callback: function(value) {
+                            return formatRupiah(value); // Format as Rupiah
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + formatRupiah(context.raw);
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+<script>
+    // Fungsi untuk memformat angka menjadi format Rupiah
+    function formatRupiah(amount) {
+        return '' + amount.toLocaleString('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('/api/products')
+        .then(response => response.json())
+        .then(data => {
+          const tableBody = document.querySelector('#productTable tbody');
+          tableBody.innerHTML = ''; // Clear existing rows
+
+          data.forEach(product => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${product.kode}</td>
+              <td>${product.nama}</td>
+              <td>${formatRupiah(product.harga)}</td>
+              <td>${product.stock}</td>
+            `;
+            tableBody.appendChild(row);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching products:', error);
+          const tableBody = document.querySelector('#productTable tbody');
+          tableBody.innerHTML = '<tr><td colspan="4">Error fetching data</td></tr>';
+        });
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</body>
+</html>

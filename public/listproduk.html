@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Admin Dashboard</title>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        #productFormContainer {
+            display: none; /* Hidden by default */
+        }
+        .card h4 {
+            margin: 0;
+        }
+        .card .card-icon {
+            font-size: 2rem;
+            color: #4e73df; /* Match the theme color */
+        }
+        .card-body {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card .icon-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+        }
+        .card .icon-container i {
+            font-size: 2rem;
+            color: #4e73df; /* Match the theme color */
+        }
+    </style>
+    
+</head>
+
+<body id="page-top" class="dark-mode">
+    <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <i class="fa fa-store fa-2x"></i>
+            <div class="sidebar-brand-text mx-3">E-Commerce Admin</div>
+        </a>
+        <hr class="sidebar-divider my-0">
+
+        <!-- Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="/">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <!-- Blocks -->
+        <div class="sidebar-heading">Blocks</div>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-cube"></i>
+                <span>Blocks</span>
+            </a>
+        </li>
+
+        <!-- Products -->
+        <li class="nav-item">
+            <a class="nav-link" href="produk.html">
+                <i class="fas fa-fw fa-box"></i>
+                <span>Add Products</span>
+            </a>
+        </li>
+
+        <!-- List Products -->
+        <li class="nav-item">
+            <a class="nav-link" href="stok.html">
+                <i class="fas fa-fw fa-box"></i>
+                <span>Add Stok</span>
+            </a>
+        </li>
+
+          <!-- Add stockall -->
+          <li class="nav-item">
+            <a class="nav-link" href="stockall.html">
+                <i class="fas fa-fw fa-box"></i>
+                <span>Add Stokall</span>
+            </a>
+        </li>
+
+        <!-- Stok -->
+        <li class="nav-item">
+            <a class="nav-link" href="listproduk.html">
+                <i class="fas fa-fw fa-box"></i>
+                <span>List Product</span>
+            </a>
+        </li>
+
+        <!-- Deposits -->
+        <li class="nav-item">
+            <a class="nav-link" href="deposit.html">
+                <i class="fas fa-fw fa-dollar-sign"></i>
+                <span>Deposits</span>
+            </a>
+        </li>
+
+        <!-- Transactions -->
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-exchange-alt"></i>
+                <span>Transactions</span>
+            </a>
+        </li>
+
+        <!-- Sales -->
+        <li class="nav-item">
+            <a class="nav-link" href="report.html">
+                <i class="fas fa-fw fa-chart-line"></i>
+                <span>Sales</span>
+            </a>
+        </li>
+
+        <!-- Revenue -->
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-money-bill-wave"></i>
+                <span>Revenue</span>
+            </a>
+        </li>
+
+        <hr class="sidebar-divider">
+        <div class="sidebar-heading">Contact</div>
+        <li class="nav-item">
+            <a class="nav-link" href="https://t.me/ahmadzakiyo">
+                <i class="fab fa-fw fa-telegram-plane"></i>
+                <span>Telegram</span>
+            </a>
+        </li>
+        <hr class="sidebar-divider">
+    </ul>
+    <!-- Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <!-- TopBar -->
+                <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+                    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle fa-2x"></i>
+                                <span class="ml-2 d-none d-lg-inline small font-weight-bold">Admin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Topbar -->
+
+                <!-- Container Fluid-->
+                <div class="container-fluid" id="container-wrapper">
+                    <!-- Product List -->
+                    <div id="productListContainer">
+                        <h2>Product List</h2>
+                        <div id="productList">
+                            <div class="form-group">
+                                <label for="productDropdown">Select Product:</label>
+                                <select class="form-control" id="productDropdown">
+                                    <option value="">Loading products...</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-danger" id="deleteBtn">Delete Product</button>
+                            <button class="btn btn-warning" id="editPriceBtn">Edit Price</button>
+                            <div class="form-group mt-3" id="priceEditContainer" style="display: none;">
+                                <label for="newPrice">New Price:</label>
+                                <input type="number" class="form-control" id="newPrice" placeholder="Enter new price">
+                                <button class="btn btn-primary mt-2" id="savePriceBtn">Save Price</button>
+                                <div id="priceMessage" class="mt-2"></div>
+                            </div>
+                            <div id="statusMessage" class="mt-3"></div> <!-- Element for status messages -->
+                        </div>
+                    </div>
+                    <!-- Product List -->
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                Made with <i class="fa fa-heart"></i> by
+                                <a href="https://https://t.me/ahmadzakiyo" target="_blank" style="color: #fff;">Ahmadzaki❤️</a>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- Footer -->
+                </div>
+                <!-- Container Fluid -->
+            </div>
+            <!-- Content Wrapper -->
+        </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/ruang-admin.min.js"></script>
+
+    <script>
+        // Fetch and populate product dropdown
+        function populateProductDropdown() {
+            fetch('/api/products')
+                .then(response => response.json())
+                .then(data => {
+                    const select = document.getElementById('productDropdown');
+                    select.innerHTML = '<option value="">Select a product</option>'; // Default option
+                    data.forEach(product => {
+                        const option = document.createElement('option');
+                        option.value = product.kode;
+                        option.text = `${product.nama} - ${product.kode}`;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    document.getElementById('statusMessage').innerText = 'Error fetching products!';
+                });
+        }
+
+        // Handle product deletion
+        document.getElementById('deleteBtn').addEventListener('click', function() {
+            const productCode = document.getElementById('productDropdown').value;
+            if (!productCode) {
+                document.getElementById('statusMessage').innerText = 'Please select a product to delete.';
+                return;
+            }
+
+            fetch(`/api/products/${productCode}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('statusMessage').innerText = 'Berhasil hapus produk!';
+                populateProductDropdown(); // Refresh the dropdown list
+            })
+            .catch(error => {
+                document.getElementById('statusMessage').innerText = 'Error deleting product!';
+            });
+        });
+
+        // Show price editing form
+        document.getElementById('editPriceBtn').addEventListener('click', function() {
+            const productCode = document.getElementById('productDropdown').value;
+            if (!productCode) {
+                document.getElementById('statusMessage').innerText = 'Please select a product to edit.';
+                return;
+            }
+
+            document.getElementById('priceEditContainer').style.display = 'block';
+        });
+
+        // Save the new price
+        document.getElementById('savePriceBtn').addEventListener('click', function() {
+            const productCode = document.getElementById('productDropdown').value;
+            const newPrice = document.getElementById('newPrice').value;
+
+            if (!productCode) {
+                document.getElementById('statusMessage').innerText = 'Please select a product to edit.';
+                return;
+            }
+
+            if (!newPrice) {
+                document.getElementById('statusMessage').innerText = 'Please enter a new price.';
+                return;
+            }
+
+            fetch(`/api/products/${productCode}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ harga: newPrice })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('statusMessage').innerText = 'Berhasil update data produk!';
+                populateProductDropdown(); // Refresh the dropdown list
+                document.getElementById('priceEditContainer').style.display = 'none';
+            })
+            .catch(error => {
+                document.getElementById('statusMessage').innerText = 'Error updating product price!';
+            });
+        });
+
+        // Initialize the product dropdown on page load
+        document.addEventListener('DOMContentLoaded', populateProductDropdown);
+    </script>
+</body>
+
+</html>
