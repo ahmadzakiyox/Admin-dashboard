@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Purchase = require('../models/purchase'); // Pastikan jalur model sesuai
+const Purchase = require('../models/Purchase'); // Pastikan jalur model sesuai
 
 // Endpoint untuk mendapatkan semua pembelian
 router.get('/', async (req, res) => {
